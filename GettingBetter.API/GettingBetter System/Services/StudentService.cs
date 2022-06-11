@@ -1,10 +1,11 @@
+using LearningCenter.API.GettingBetter_System.Domain.Repositories;
 using LearningCenter.API.Learning.Domain.Models;
 using LearningCenter.API.Learning.Domain.Repositories;
 using LearningCenter.API.Learning.Domain.Services;
 using LearningCenter.API.Learning.Domain.Services.Communication;
 using LearningCenter.API.Shared.Domain.Repositories;
 
-namespace LearningCenter.API.Learning.Services;
+namespace LearningCenter.API.GettingBetter_System.Services;
 
 public class StudentService : IStudentService
 {
@@ -38,12 +39,9 @@ public class StudentService : IStudentService
         if (existingCoach == null)
             return new StudentResponse("Invalid Coach");
         
-        // Validate Title
+        // Validate 
 
-        var existingStudentWithTitle = await _studentRepository.FindByTitleAsync(student.Title);
-
-        if (existingStudentWithTitle != null)
-            return new StudentResponse("Student title already exists.");
+       
 
         try
         {
@@ -81,17 +79,6 @@ public class StudentService : IStudentService
 
         if (existingCoach == null)
             return new StudentResponse("Invalid Coach");
-        
-        // Validate Title
-
-        var existingStudentWithTitle = await _studentRepository.FindByTitleAsync(student.Title);
-
-        if (existingStudentWithTitle != null && existingStudentWithTitle.Id != existingStudent.Id)
-            return new StudentResponse("Student title already exists.");
-        
-        // Modify Fields
-        existingStudent.Title = student.Title;
-        existingStudent.Description = student.Description;
 
         try
         {

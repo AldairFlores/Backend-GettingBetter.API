@@ -43,7 +43,7 @@ public class CoachService : ICoachService
         if (existingCoach == null)
             return new CoachResponse("Coach not found.");
 
-        existingCoach.Name = coach.Name;
+        existingCoach.FirstName = coach.FirstName;
 
         try
         {

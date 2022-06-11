@@ -1,11 +1,12 @@
 using AutoMapper;
+using LearningCenter.API.GettingBetter_System.Resources;
 using LearningCenter.API.Learning.Domain.Models;
 using LearningCenter.API.Learning.Domain.Services;
 using LearningCenter.API.Learning.Resources;
 using LearningCenter.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LearningCenter.API.Learning.Controllers;
+namespace LearningCenter.API.GettingBetter_System.Controllers;
 
 [ApiController]
 [Route("/api/v1/[controller]")]
